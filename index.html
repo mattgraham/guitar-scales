@@ -2,7 +2,7 @@
 <html lang="cs">
 <head>
 	<meta charset="utf-8">
-	<title>title</title>
+	<title>Guitar Scales &amp; Chords</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author" content="">
@@ -28,6 +28,9 @@
 	width:100%;
 	height:100%;
 }
+td * {
+	font-size:10px !important;
+}
 
 
 #fretboard table tr td .dot1 {
@@ -40,11 +43,17 @@
 #fretboard table tr td.zero {
 	background-color:#ccc;
 }
+.fix {
+  position: fixed;
+}
+#wrapper {
+	padding-top:60px;
+}
 </style>
 
 </head>
 <body>
-<div class="navbar navbar-inverse">
+<div class="navbar navbar-inverse navbar-fixed-top fix">
 	<div class="navbar-inner">
 		<div class="container">
 		
@@ -53,9 +62,25 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</a>
+			
+			<span class="brand" id="scaleName">Guitar Scales &amp; Chords</span>
 
 			<div class="nav-collapse collapse">
 				<form class="navbar-form pull-right">
+					<select id="select-note" class="input-small">
+						<option value="1">C</option>
+						<option value="2">C#</option>
+						<option value="3">D</option>
+						<option value="4">D#</option>
+						<option value="5">E</option>
+						<option value="6">F</option>
+						<option value="7">F#</option>
+						<option value="8">G</option>
+						<option value="9">G#</option>
+						<option value="10">A</option>
+						<option value="11">A#</option>
+						<option value="12">H</option>
+					</select>
 					<select id="select-scale">
 						<option value="1">Major Scale</option>
 						<option value="2">Natural Minor Scale</option>
@@ -70,7 +95,9 @@
 		</div>
 	</div>
 </div>
-	<div class="container">
+	<div class="container" id="wrapper">
+
+		
 		<div class="row-fluid">
 			<div class="span12">
 				<div id="fretboard">
@@ -85,7 +112,7 @@
 		<td><span><a href="javascript:;" class="badge" data-note="10">A</a></span></td>
 		<td><span><a href="javascript:;" class="badge" data-note="11">A#</a></span></td>
 		<td><span><a href="javascript:;" class="badge" data-note="12">H</a></span></td>
-		<td><span><a href="javascript:;" class="badge badge-success" data-note="1">C</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="1">C</a></span></td>
 		<td><span><a href="javascript:;" class="badge" data-note="2">C#</a></span></td>
 		<td><span><a href="javascript:;" class="badge" data-note="3">D</a></span></td>
 		<td><span><a href="javascript:;" class="badge" data-note="4">D#</a></span></td>

@@ -70,10 +70,13 @@ $(function(){
 		$('td a').click(function(){
 			$('td a').removeClass("badge-success").removeClass("badge-info").css("opacity", 0.6)
 			var note = $(this).data("note");
-			// console.log(note);
+			localStorage.setItem("note", note);
+			$('#select-note').val(note);
+
 			$('a[data-note="'+note+'"]').addClass("badge-success").css("opacity", 1);
 
-			var selectScale = parseInt($('#select-scale option:selected').val());
+			var selectScale = parseInt($('#select-scale').val());
+			localStorage.setItem("scale", selectScale);
 
 			var scale = new Array();
 			switch(selectScale) {
@@ -85,7 +88,8 @@ $(function(){
 				case 7: scale = bluesScale; break;
 				default: scale = majorScale;
 			}
-			console.log(selectScale);
+			// console.log(selectScale);
+			$('#scaleName').text(notes[note]+" "+$('#select-scale option:selected').text());
 
 			
 			var scaleNote = note;
@@ -99,10 +103,23 @@ $(function(){
 			return false;
 		});
 
+		var default_note = localStorage.getItem("note");
+		if(default_note=="" || default_note==null) default_note = 1;
 
-		$('.badge-success:first').click();
+		var default_scale = localStorage.getItem("scale");
+		// console.log(default_scale);
+		if(default_scale=="" || default_scale==null) default_scale = 1;
+		$('#select-scale').val(default_scale);
+		
+
+		$('a[data-note="'+default_note+'"]:first').click();
+
 		$('#select-scale').change(function(){
 			$('.badge-success:first').click();
+		});
+
+		$('#select-note').change(function(){
+			$('a[data-note="'+$(this).val()+'"]:first').click();
 		});
 
 });
