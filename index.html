@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="utf-8">
+	<title>title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="./bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+
+<style>
+#fretboard table {
+	width:100%;
+}
+
+#fretboard table tr td {
+	width:4%;
+	text-align:center;
+	padding:0;
+	background: #e8e3a8 url('frets.png') repeat-x right center;
+}
+
+#fretboard table tr td span {
+	text-align:center;
+	padding:3px 0;
+	display:block;
+	width:100%;
+	height:100%;
+}
+
+
+#fretboard table tr td .dot1 {
+	background: url('dot1.png') no-repeat center bottom;
+}
+#fretboard table tr td .dot2 {
+	background: url('dot2.png') no-repeat center top;
+}
+
+#fretboard table tr td.zero {
+	background-color:#ccc;
+}
+</style>
+
+</head>
+<body>
+<div class="navbar navbar-inverse">
+	<div class="navbar-inner">
+		<div class="container">
+		
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+
+			<div class="nav-collapse collapse">
+				<form class="navbar-form pull-right">
+					<select id="select-scale">
+						<option value="1">Major Scale</option>
+						<option value="2">Natural Minor Scale</option>
+						<option value="3">Melodic Minor Scale</option>
+						<option value="4">Harmonic Minor Scale</option>
+						<option value="5">Major Pentatonic</option>
+						<option value="6">Minor Pentatonic</option>
+						<option value="7">Blues Scale</option>
+					</select>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span12">
+				<div id="fretboard">
+					<table>
+	
+	<tr>
+		<td class="zero"><span><a href="javascript:;" class="badge" data-note="5">E</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="6">F</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="7">F#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="8">G</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="9">G#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="10">A</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="11">A#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="12">H</a></span></td>
+		<td><span><a href="javascript:;" class="badge badge-success" data-note="1">C</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="2">C#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="3">D</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="4">D#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="5">E</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="6">F</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="7">F#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="8">G</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="9">G#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="10">A</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="11">A#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="12">H</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="1">C</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="2">C#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="3">D</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="4">D#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="5">E</a></span></td>
+	</tr>
+	<tr>
+		<td class="zero"><span><a href="javascript:;" class="badge" data-note="12">H</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="1">C</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="2">C#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="3">D</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="4">D#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="5">E</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="6">F</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="7">F#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="8">G</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="9">G#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="10">A</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="11">A#</a></span></td>
+		<td><span class="dot1"><a href="javascript:;" class="badge" data-note="12">H</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="1">C</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="2">C#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="3">D</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="4">D#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="5">E</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="6">F</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="7">F#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="8">G</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="9">G#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="10">A</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="11">A#</a></span></td>
+		<td><span class="dot1"><a href="javascript:;" class="badge" data-note="12">H</a></span></td>
+	</tr>
+	<tr>
+		<td class="zero"><span><a href="javascript:;" class="badge" data-note="8">G</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="9">G#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="10">A</a></span></td>
+		<td><span class="dot1"><a href="javascript:;" class="badge" data-note="11">A#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="12">H</a></span></td>
+		<td><span class="dot1"><a href="javascript:;" class="badge" data-note="1">C</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="2">C#</a></span></td>
+		<td><span class="dot1"><a href="javascript:;" class="badge" data-note="3">D</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="4">D#</a></span></td>
+		<td><span class="dot1"><a href="javascript:;" class="badge" data-note="5">E</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="6">F</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="7">F#</a></span></td>
+		<td><span class="dot2"><a href="javascript:;" class="badge" data-note="8">G</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="9">G#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="10">A</a></span></td>
+		<td><span class="dot1"><a href="javascript:;" class="badge" data-note="11">A#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="12">H</a></span></td>
+		<td><span class="dot1"><a href="javascript:;" class="badge" data-note="1">C</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="2">C#</a></span></td>
+		<td><span class="dot1"><a href="javascript:;" class="badge" data-note="3">D</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="4">D#</a></span></td>
+		<td><span class="dot1"><a href="javascript:;" class="badge" data-note="5">E</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="6">F</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="7">F#</a></span></td>
+		<td><span class="dot2"><a href="javascript:;" class="badge" data-note="8">G</a></span></td>
+	</tr>
+	<tr>
+		<td class="zero"><span><a href="javascript:;" class="badge" data-note="3">D</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="4">D#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="5">E</a></span></td>
+		<td><span class="dot2"><a href="javascript:;" class="badge" data-note="6">F</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="7">F#</a></span></td>
+		<td><span class="dot2"><a href="javascript:;" class="badge" data-note="8">G</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="9">G#</a></span></td>
+		<td><span class="dot2"><a href="javascript:;" class="badge" data-note="10">A</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="11">A#</a></span></td>
+		<td><span class="dot2"><a href="javascript:;" class="badge" data-note="12">H</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="1">C</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="2">C#</a></span></td>
+		<td><span class="dot1"><a href="javascript:;" class="badge" data-note="3">D</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="4">D#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="5">E</a></span></td>
+		<td><span class="dot2"><a href="javascript:;" class="badge" data-note="6">F</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="7">F#</a></span></td>
+		<td><span class="dot2"><a href="javascript:;" class="badge" data-note="8">G</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="9">G#</a></span></td>
+		<td><span class="dot2"><a href="javascript:;" class="badge" data-note="10">A</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="11">A#</a></span></td>
+		<td><span class="dot2"><a href="javascript:;" class="badge" data-note="12">H</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="1">C</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="2">C#</a></span></td>
+		<td><span class="dot1"><a href="javascript:;" class="badge" data-note="3">D</a></span></td>
+	</tr>
+	<tr>
+		<td class="zero"><span><a href="javascript:;" class="badge" data-note="10">A</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="11">A#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="12">H</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="1">C</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="2">C#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="3">D</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="4">D#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="5">E</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="6">F</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="7">F#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="8">G</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="9">G#</a></span></td>
+		<td><span class="dot2"><a href="javascript:;" class="badge" data-note="10">A</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="11">A#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="12">H</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="1">C</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="2">C#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="3">D</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="4">D#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="5">E</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="6">F</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="7">F#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="8">G</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="9">G#</a></span></td>
+		<td><span class="dot2"><a href="javascript:;" class="badge" data-note="10">A</a></span></td>
+	</tr>
+	<tr>
+		<td class="zero"><span><a href="javascript:;" class="badge" data-note="5">E</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="6">F</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="7">F#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="8">G</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="9">G#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="10">A</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="11">A#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="12">H</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="1">C</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="2">C#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="3">D</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="4">D#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="5">E</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="6">F</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="7">F#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="8">G</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="9">G#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="10">A</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="11">A#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="12">H</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="1">C</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="2">C#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="3">D</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="4">D#</a></span></td>
+		<td><span><a href="javascript:;" class="badge" data-note="5">E</a></span></td>
+	</tr>
+					</table>
+				</div>
+	
+				
+			</div>
+		</div>
+	</div>
+
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="./bootstrap/js/bootstrap.min.js"></script>
+	<script src="./app.js"></script>
+</body>
+</html>
