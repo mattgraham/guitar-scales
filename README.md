@@ -1,10 +1,8 @@
-Guitar scales &amp; chords
-==========================
+Guitar, Piano &amp; Novation Launchpad
+======================================
 
-Simple app for guitar scales &amp; chords
+Simple app for guitar, piano &amp; Novation Launchpad scales &amp; chords
 
 ## Todo
 
 * Chords in key
-* Piano keyboard
-* AKAI Launchpad schema

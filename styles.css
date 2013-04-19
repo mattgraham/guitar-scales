@@ -1,0 +1,137 @@
+table {
+	width:100%;
+}
+
+#fretboard table tr td {
+	width:4%;
+	text-align:center;
+	padding:0;
+	background: #e8e3a8 url('frets.png') repeat-x right center;
+}
+
+#fretboard table tr td span {
+	text-align:center;
+	padding:3px 0;
+	display:block;
+	width:100%;
+	height:100%;
+}
+td * {
+	font-size:10px !important;
+}
+
+
+#fretboard table tr td .dot1 {
+	background: url('dot1.png') no-repeat center bottom;
+}
+#fretboard table tr td .dot2 {
+	background: url('dot2.png') no-repeat center top;
+}
+
+#fretboard table tr td.zero {
+	background-color:#ccc;
+}
+#wrapper {
+	padding-top:12px;
+}
+
+#piano {
+	position:relative;
+}
+#piano #piano-black {
+	position:absolute;
+}
+#piano td {
+	width:14%;
+	padding:0;
+	text-align:center;
+}
+#piano td span {
+	display:block;
+	width:100%;
+	height:100%;
+	text-align:center;
+}
+
+#piano #piano-black td.black span {
+	background:#000 !important;
+	width:60%;
+	margin:0 auto;
+}
+
+#piano #piano-black td {
+	height:80px;
+}
+
+#piano #piano-white td {
+	border:1px solid #000;
+	height:140px;
+}
+
+#piano #piano-black td a {
+	position:relative;
+	top:40px;
+}
+
+#piano #piano-white td a {
+	position:relative;
+	top:100px;
+}
+#launchpad {
+	background:#333;
+	padding:12px;
+}
+#launchpad td {
+	width:11%;
+	text-align: left;
+	padding:0;
+}
+#launchpad td span {
+	display:block;
+	background:#666;
+	-webkit-box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, 0.3);
+	text-align: center;
+	height:50px;
+	margin:0 6px 6px 0;
+}
+#launchpad td span.selected-octave {
+	background:#888;
+}
+
+#launchpad td span.selected {
+	background:#abbe41;
+}
+#launchpad td span.selected-key {
+	background:#c0733f;
+}
+
+
+#launchpad td span a {
+	position:relative;
+	top:10px;
+}
+#launchpad td.round span {
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+
+#launchpad td.cross1 span {
+	-webkit-border-radius: 0 0 20px 0;
+	border-radius: 0 0 20px 0;
+}
+
+#launchpad td.cross2 span {
+	-webkit-border-radius: 0 0 0 20px;
+	border-radius: 0 0 0 20px;
+}
+
+#launchpad td.cross3 span {
+	-webkit-border-radius: 0 20px 0 0;
+	border-radius: 0 20px 0 0;
+}
+
+#launchpad td.cross4 span {
+	-webkit-border-radius: 20px 0 0 0;
+	border-radius: 20px 0 0 0;
+}

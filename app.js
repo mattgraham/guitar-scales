@@ -100,6 +100,11 @@ $(function(){
 				
 			}
 
+			// launchpad light
+			$('#launchpad span').removeClass("selected-key").removeClass("selected");
+			$('#launchpad .badge-success').parent().addClass("selected-key");
+			$('#launchpad .badge-info').parent().addClass("selected");
+
 			return false;
 		});
 
@@ -110,6 +115,10 @@ $(function(){
 		// console.log(default_scale);
 		if(default_scale=="" || default_scale==null) default_scale = 1;
 		$('#select-scale').val(default_scale);
+
+		var default_octave = localStorage.getItem("octave");
+		if(default_octave=="" || default_octave==null) default_octave = "none";
+		$('#select-octave').val(default_octave);		
 		
 
 		$('a[data-note="'+default_note+'"]:first').click();
@@ -121,5 +130,16 @@ $(function(){
 		$('#select-note').change(function(){
 			$('a[data-note="'+$(this).val()+'"]:first').click();
 		});
+
+		$('#select-octave').change(function(){
+			var selectedOctave = $(this).val();
+			localStorage.setItem("octave", selectedOctave);
+			$('#launchpad td span').removeClass("selected-octave");
+
+			if(selectedOctave!="") {
+				$('#launchpad td a[data-octave="'+selectedOctave+'"]').parent().addClass("selected-octave");
+			}
+		});
+		$('#select-octave').change();
 
 });
