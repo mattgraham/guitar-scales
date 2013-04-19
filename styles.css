@@ -6,7 +6,7 @@ table {
 	width:4%;
 	text-align:center;
 	padding:0;
-	background: #e8e3a8 url('frets.png') repeat-x right center;
+	background: #e9dec9 url('frets.png') repeat-x right center;
 }
 
 #fretboard table tr td span {
@@ -29,7 +29,7 @@ td * {
 }
 
 #fretboard table tr td.zero {
-	background-color:#ccc;
+	background-color:#d2bc93;
 }
 #wrapper {
 	padding-top:12px;
@@ -60,22 +60,22 @@ td * {
 }
 
 #piano #piano-black td {
-	height:80px;
+	height:120px;
 }
 
 #piano #piano-white td {
 	border:1px solid #000;
-	height:140px;
+	height:220px;
 }
 
 #piano #piano-black td a {
 	position:relative;
-	top:40px;
+	top:80px;
 }
 
 #piano #piano-white td a {
 	position:relative;
-	top:100px;
+	top:180px;
 }
 #launchpad {
 	background:#333;
@@ -134,4 +134,11 @@ td * {
 #launchpad td.cross4 span {
 	-webkit-border-radius: 20px 0 0 0;
 	border-radius: 20px 0 0 0;
+}
+
+#chords td {
+	text-align:center;
+	font-weight:bold;
+	font-size:1.4em;
+	font-size:1.2rem;
 }

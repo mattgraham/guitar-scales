@@ -21,6 +21,22 @@ $(function(){
 			majorScale[4] = 2;
 			majorScale[5] = 2;
 			majorScale[6] = 2;
+			var majorChords = new Array();
+				majorChords[0] = "maj";
+				majorChords[1] = "min";
+				majorChords[2] = "min";
+				majorChords[3] = "maj";
+				majorChords[4] = "maj";
+				majorChords[5] = "min";
+				majorChords[6] = "dim";
+			var majorChords7 = new Array();
+				majorChords7[0] = "maj7";
+				majorChords7[1] = "min7";
+				majorChords7[2] = "min7";
+				majorChords7[3] = "maj7";
+				majorChords7[4] = "maj7";
+				majorChords7[5] = "min7";
+				majorChords7[6] = "m7b5";	
 
 		var minorScale = new Array();
 			minorScale[1] = 2;
@@ -29,6 +45,22 @@ $(function(){
 			minorScale[4] = 2;
 			minorScale[5] = 1;
 			minorScale[6] = 2;
+			var minorChords = new Array();
+				minorChords[0] = "min";
+				minorChords[1] = "dim";
+				minorChords[2] = "maj";
+				minorChords[3] = "min";
+				minorChords[4] = "min";
+				minorChords[5] = "maj";
+				minorChords[6] = "maj";
+			var minorChords7 = new Array();
+				minorChords7[0] = "min7";
+				minorChords7[1] = "m7b5";
+				minorChords7[2] = "maj7";
+				minorChords7[3] = "min7";
+				minorChords7[4] = "min7";
+				minorChords7[5] = "maj7";
+				minorChords7[6] = "maj7";
 
 		var melodicMinorScale = new Array();
 			melodicMinorScale[1] = 2;
@@ -37,6 +69,22 @@ $(function(){
 			melodicMinorScale[4] = 2;
 			melodicMinorScale[5] = 2;
 			melodicMinorScale[6] = 2;
+			var melodicMinorChords = new Array();
+				melodicMinorChords[0] = "min";
+				melodicMinorChords[1] = "min";
+				melodicMinorChords[2] = "aug";
+				melodicMinorChords[3] = "maj";
+				melodicMinorChords[4] = "maj";
+				melodicMinorChords[5] = "dim";
+				melodicMinorChords[6] = "dim";
+			var melodicMinorChords7 = new Array();
+				melodicMinorChords7[0] = "min/maj7";
+				melodicMinorChords7[1] = "min7";
+				melodicMinorChords7[2] = "maj7#5";
+				melodicMinorChords7[3] = "dom7";
+				melodicMinorChords7[4] = "dom7";
+				melodicMinorChords7[5] = "m7b5";
+				melodicMinorChords7[6] = "m7b5";
 
 		var harmonicMinorScale = new Array();
 			harmonicMinorScale[1] = 2;
@@ -45,6 +93,22 @@ $(function(){
 			harmonicMinorScale[4] = 2;
 			harmonicMinorScale[5] = 1;
 			harmonicMinorScale[6] = 3;
+			var harmonicMinorChords = new Array();
+				harmonicMinorChords[0] = "min";
+				harmonicMinorChords[1] = "dim";
+				harmonicMinorChords[2] = "aug";
+				harmonicMinorChords[3] = "min";
+				harmonicMinorChords[4] = "maj";
+				harmonicMinorChords[5] = "maj";
+				harmonicMinorChords[6] = "dim";
+			var harmonicMinorChords7 = new Array();
+				harmonicMinorChords7[0] = "min/maj7";
+				harmonicMinorChords7[1] = "m7b5";
+				harmonicMinorChords7[2] = "maj7#5";
+				harmonicMinorChords7[3] = "min7";
+				harmonicMinorChords7[4] = "dom7";
+				harmonicMinorChords7[5] = "maj7";
+				harmonicMinorChords7[6] = "dim7";
 
 
 		var majorPentatonicScale = new Array();
@@ -77,26 +141,42 @@ $(function(){
 
 			var selectScale = parseInt($('#select-scale').val());
 			localStorage.setItem("scale", selectScale);
+			var showChords = true;
 
 			var scale = new Array();
 			switch(selectScale) {
-				case 2: scale = minorScale; break;
-				case 3: scale = melodicMinorScale; break;
-				case 4: scale = harmonicMinorScale; break;
-				case 5: scale = majorPentatonicScale; break;
-				case 6: scale = minorPentatonicScale; break;
-				case 7: scale = bluesScale; break;
-				default: scale = majorScale;
+				case 2: scale = minorScale; scaleChords = minorChords; scaleChords7 = minorChords7; break;
+				case 3: scale = melodicMinorScale; scaleChords = melodicMinorChords; scaleChords7 = melodicMinorChords7; break;
+				case 4: scale = harmonicMinorScale; scaleChords = harmonicChords; scaleChords7 = harmonicChords7; break;
+				case 5: scale = majorPentatonicScale; showChords = false; break;
+				case 6: scale = minorPentatonicScale; showChords = false; break;
+				case 7: scale = bluesScale; showChords = false; break;
+				default: scale = majorScale; scaleChords = majorChords; scaleChords7 = majorChords7;
 			}
 			// console.log(selectScale);
 			$('#scaleName').text(notes[note]+" "+$('#select-scale option:selected').text());
 
+			if(showChords) $('#chords').show();
+			else $('#chords').hide();
+
 			
 			var scaleNote = note;
+
+				if(showChords) {
+					$('#chords table tr:eq(0) td:eq(0)').text(notes[scaleNote]+scaleChords[0]);
+					$('#chords table tr:eq(1) td:eq(0)').text(notes[scaleNote]+scaleChords7[0]);
+				}
+
 			for(i=0;i<scale.length;i++) {
 				scaleNote = scaleNote+scale[i+1];
 				if(scaleNote>12) scaleNote = scaleNote-12;
+
 				$('a[data-note="'+scaleNote+'"]').addClass("badge-info").css("opacity", 1);
+
+				if(showChords) {
+					$('#chords table tr:eq(0) td:eq('+(i+1)+')').text(notes[scaleNote]+scaleChords[i+1]);
+					$('#chords table tr:eq(1) td:eq('+(i+1)+')').text(notes[scaleNote]+scaleChords7[i+1]);
+				}
 				
 			}
 

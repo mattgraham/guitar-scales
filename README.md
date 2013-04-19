@@ -5,4 +5,4 @@ Simple app for guitar, piano &amp; Novation Launchpad scales &amp; chords
 
 ## Todo
 
-* Chords in key
+* Buy Launchpad and make right notes :-)
