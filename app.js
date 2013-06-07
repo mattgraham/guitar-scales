@@ -1,5 +1,4 @@
 $(function(){
-
 		var notes = new Array();
 			notes[1] = 'C';
 			notes[2] = 'C#';
@@ -12,7 +11,7 @@ $(function(){
 			notes[9] = 'G#';
 			notes[10] = 'A';
 			notes[11] = 'A#';
-			notes[12] = 'H';
+			notes[12] = 'B';
 
 		var majorScale = new Array();
 			majorScale[1] = 2;
@@ -132,12 +131,12 @@ $(function(){
 
 
 		$('td a').click(function(){
-			$('td a').removeClass("badge-success").removeClass("badge-info").css("opacity", 0.6)
+			$('td a').removeClass("badge-success").removeClass("badge-info").css("opacity", 0.3)
 			var note = $(this).data("note");
 			localStorage.setItem("note", note);
 			$('#select-note').val(note);
 
-			$('a[data-note="'+note+'"]').addClass("badge-success").css("opacity", 1);
+			$('a[data-note="'+note+'"]').addClass("badge-success").css("opacity", 0.6);
 
 			var selectScale = parseInt($('#select-scale').val());
 			localStorage.setItem("scale", selectScale);
@@ -171,7 +170,7 @@ $(function(){
 				scaleNote = scaleNote+scale[i+1];
 				if(scaleNote>12) scaleNote = scaleNote-12;
 
-				$('a[data-note="'+scaleNote+'"]').addClass("badge-info").css("opacity", 1);
+				$('a[data-note="'+scaleNote+'"]').addClass("badge-info").css("opacity", 0.6);
 
 				if(showChords) {
 					$('#chords table tr:eq(0) td:eq('+(i+1)+')').text(notes[scaleNote]+scaleChords[i+1]);
@@ -222,4 +221,17 @@ $(function(){
 		});
 		$('#select-octave').change();
 
+
+var i = 0;
+$('#fretboard tr:first td').each(function(){
+	var koef = 0.1;
+
+	if(i>8) koef = 0.15;
+
+	if(i>0) {
+		$('#fretboard tr:first td:eq('+i+')').css({"width" : (6.5-(i*koef))+"%"});
+	}
+console.log(i);
+i++;
+});
 });
