@@ -146,7 +146,7 @@ $(function(){
 			switch(selectScale) {
 				case 2: scale = minorScale; scaleChords = minorChords; scaleChords7 = minorChords7; break;
 				case 3: scale = melodicMinorScale; scaleChords = melodicMinorChords; scaleChords7 = melodicMinorChords7; break;
-				case 4: scale = harmonicMinorScale; scaleChords = harmonicChords; scaleChords7 = harmonicChords7; break;
+				case 4: scale = harmonicMinorScale; scaleChords = harmonicMinorChords; scaleChords7 = harmonicMinorChords7; break;
 				case 5: scale = majorPentatonicScale; showChords = false; break;
 				case 6: scale = minorPentatonicScale; showChords = false; break;
 				case 7: scale = bluesScale; showChords = false; break;
@@ -231,7 +231,7 @@ $('#fretboard tr:first td').each(function(){
 	if(i>0) {
 		$('#fretboard tr:first td:eq('+i+')').css({"width" : (6.5-(i*koef))+"%"});
 	}
-console.log(i);
+// console.log(i);
 i++;
 });
 });
