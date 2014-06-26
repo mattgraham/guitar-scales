@@ -35,7 +35,7 @@ $(function(){
 				majorChords7[3] = "maj7";
 				majorChords7[4] = "maj7";
 				majorChords7[5] = "min7";
-				majorChords7[6] = "m7b5";	
+				majorChords7[6] = "m7b5";
 
 		var minorScale = new Array();
 			minorScale[1] = 2;
@@ -131,12 +131,12 @@ $(function(){
 
 
 		$('td a').click(function(){
-			$('td a').removeClass("badge-success").removeClass("badge-info").css("opacity", 0.3)
+			$('td a').removeClass("badge-success").removeClass("badge-info").css("opacity", 0.1)
 			var note = $(this).data("note");
 			localStorage.setItem("note", note);
 			$('#select-note').val(note);
 
-			$('a[data-note="'+note+'"]').addClass("badge-success").css("opacity", 0.6);
+			$('a[data-note="'+note+'"]').addClass("badge-success").css("opacity", 0.9);
 
 			var selectScale = parseInt($('#select-scale').val());
 			localStorage.setItem("scale", selectScale);
@@ -158,7 +158,7 @@ $(function(){
 			if(showChords) $('#chords').show();
 			else $('#chords').hide();
 
-			
+
 			var scaleNote = note;
 
 				if(showChords) {
@@ -170,13 +170,13 @@ $(function(){
 				scaleNote = scaleNote+scale[i+1];
 				if(scaleNote>12) scaleNote = scaleNote-12;
 
-				$('a[data-note="'+scaleNote+'"]').addClass("badge-info").css("opacity", 0.6);
+				$('a[data-note="'+scaleNote+'"]').addClass("badge-info").css("opacity", 0.9);
 
 				if(showChords) {
 					$('#chords table tr:eq(0) td:eq('+(i+1)+')').text(notes[scaleNote]+scaleChords[i+1]);
 					$('#chords table tr:eq(1) td:eq('+(i+1)+')').text(notes[scaleNote]+scaleChords7[i+1]);
 				}
-				
+
 			}
 
 			// launchpad light
@@ -197,8 +197,8 @@ $(function(){
 
 		var default_octave = localStorage.getItem("octave");
 		if(default_octave=="" || default_octave==null) default_octave = "none";
-		$('#select-octave').val(default_octave);		
-		
+		$('#select-octave').val(default_octave);
+
 
 		$('a[data-note="'+default_note+'"]:first').click();
 
